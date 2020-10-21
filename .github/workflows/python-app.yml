@@ -26,5 +26,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run python
       run:
-        uwsgi --socket 0.0.0.0:9097 -w WSGI:app
+        python main.py &
 
