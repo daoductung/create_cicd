@@ -26,5 +26,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run python
       run:
-        nohup python3 main.py &
+        nohup python3 main.py > log_api.txt 2>&1 &
 
