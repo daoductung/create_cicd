@@ -24,10 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Kill port
-      run:
-        fuser -k 9799/tcp
     - name: Run python
       run:
-        python3 main.py &
+        env/bin/uwsgi --socket 0.0.0.0:9097 -w WSGI:app
 
