@@ -20,8 +20,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - name: Pull code
-      run: git pull origin master
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
