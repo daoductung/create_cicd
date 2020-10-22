@@ -1,4 +1,5 @@
 from flask import Flask
+from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
 
@@ -8,7 +9,8 @@ def index():
     return "<h1>Hello!</h1>"
 
 
-if __name__ == "__main__":
-    from waitress import serve
+FLASK_RUN_HOST = '0.0.0.0'
+FLASK_RUN_PORT = 9797
 
-    serve(app, host="0.0.0.0", port=8080)
+http_server = WSGIServer((str(FLASK_RUN_HOST), int(FLASK_RUN_PORT)), app)
+http_server.serve_forever()
