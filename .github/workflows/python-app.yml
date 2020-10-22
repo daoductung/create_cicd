@@ -29,6 +29,6 @@ jobs:
         docker build -t flask_cicd:v1 .
     - name: Run docker compose
       run:
-        docker-compose down
+#        docker-compose down
         docker-compose up
 
