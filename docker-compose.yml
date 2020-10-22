@@ -1,0 +1,8 @@
+version: "3.7"
+
+services:
+  app:
+    image: flask_cicd:v1
+    ports:
+      - "9799:9799"
+    restart: unless-stopped
