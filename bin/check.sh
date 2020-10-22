@@ -1,6 +1,6 @@
 #!/bin/bash
 
-images_name="flask_cicd:v1"
+images_name=$1
 container_id=$(docker ps -a | grep $images_name | awk '{print $1}')
 if [[ '' == $container_id ]]; then
   exit 1;

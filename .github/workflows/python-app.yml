@@ -26,7 +26,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run bash script ckeck docker
       run:
-        sh bin/check.sh
+        sh bin/check.sh flask_cicd:v1 .
     - name: Docker build image
       run:
         docker build -t flask_cicd:v1 .
