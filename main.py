@@ -13,8 +13,6 @@ SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 # The ID and range of a sample spreadsheet.
 SAMPLE_SPREADSHEET_ID = '11oKN8trdZSEAiE4T-7TVsf17K0qFQ8uk05oHSFUDm50'
 SAMPLE_RANGE_NAME = 'DATABASE_KICKOFF'
-
-
 @app.route('/home')
 def home():
     """Shows basic usage of the Sheets API.
